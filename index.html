@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boidushya</title>
+    <style>
+      * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      p {
+        margin-block: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Hi! I'm Boidushya</h1>
+      <p>
+        I love building stuff. A lot. I am a fullstack and web3 dev with a
+        <a href="https://triplebyte.com/tb/boidushya-56o0ylb/certificate"
+          >specialization in React & frontend</a
+        >. I made this website cuz I was bored and wanted to make one of those
+        super minimalist websites that are all the rage these days.
+      </p>
+    </section>
+    <section>
+      <p>Heres some stuff I've built:</p>
+      <ol>
+        <li>
+          <a href="https://dope.boidushya.com" target="_blank" rel="noreferrer"
+            >This Website is Dope</a
+          >
+          <p>- A UI-Kit for creating neo-modern glassmorphic websites</p>
+        </li>
+        <li>
+          <a href="https://www.sqwid.app" target="_blank" rel="noreferrer"
+            >Sqwid App</a
+          >
+          <p>
+            - Sqwid is an NFT marketplace running on the Reef chain that
+            features per-item customizable royalties.
+          </p>
+        </li>
+        <li>
+          <a href="https://listen.rezo.live" target="_blank" rel="noreferrer"
+            >Rezonance</a
+          >
+          <p>
+            - Rezonance is a modern music player that lets you play your
+            favorite songs in high quality without getting interrupted by ads
+          </p>
+        </li>
+        <li>
+          <a href="https://boidushya.com" target="_blank" rel="noreferrer"
+            >Portfolio Website</a
+          >
+          <p>
+            - My very own portfolio website (haha not this one). The terminal
+            system is built without using any third party modules
+          </p>
+        </li>
+        <li>
+          <a
+            href="https://github.com/boidushya/create-reef-dapp"
+            target="_blank"
+            rel="noreferrer"
+            >Create Reef Dapp</a
+          >
+          <p>- Starter kit/ Boilerplate for bootstrapping a React Reef Dapp</p>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/etjfo/"
+            target="_blank"
+            rel="noreferrer"
+            >Every Tom and Jerry Frame in Order</a
+          >
+          <p>
+            - A facebook bot that posted Tom and Jerry frames one at a time.
+          </p>
+        </li>
+        <li>
+          <a href="https://web3confindia.xyz/" target="_blank" rel="noreferrer"
+            >Web3Conf India</a
+          >
+          <p>
+            - India's largest chain agnostic web3 conference. Apart from being
+            an organizer, I also made the website for this.
+          </p>
+        </li>
+        <li>
+          <a
+            href="https://vinyl-client.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            >Vinyl</a
+          >
+          <p>
+            - A music-based hangman. Runners up of
+            <a
+              href="https://townhall.hashnode.com/aws-amplify-x-hashnode-hackathon-winners"
+              target="_blank"
+              rel="noreferrer"
+              >AWS Amplify x Hashnode Hackathon</a
+            >
+          </p>
+        </li>
+      </ol>
+      <p>And much more...</p>
+    </section>
+    <section>
+      <h3>As you might've figured, I love music!</h3>
+      <p>Here are some of my current favorite songs:</p>
+      <ol id="songs">
+        <p>Loading...</p>
+      </ol>
+    </section>
+    <script type="module">
+      const url =
+        "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=3&playlistId=PLAVz83Xtm7v2SeBdjrAFBNCwYIft8ZdVl&key=AIzaSyD_-SE7VcOCfum3vfbqGn3iypOtmnaJJj0";
+      const response = await fetch(url);
+      const data = await response.json();
+      const videos = data.items.map((item) => ({
+        title: item.snippet.title,
+        url: `https://www.youtube.com/watch?v=${item.snippet.resourceId.videoId}`,
+      }));
+      const list = document.getElementById("songs");
+      list.innerHTML = "";
+      videos.forEach((video) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = video.url;
+        a.target = "_blank";
+        a.rel = "noreferrer";
+        a.innerText = video.title;
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+
+      console.log(videos);
+    </script>
+  </body>
+</html>
