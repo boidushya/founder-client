@@ -1,3 +1,6 @@
-build: {
-  target: "esnext";
-}
+export default defineConfig({
+	build: {
+	  target: "esnext";
+	}
+});
+
