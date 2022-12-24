@@ -178,7 +178,7 @@
       const fetchSongs = async () => {
         // Get the top 3 songs from my youtube playlist
         const url =
-          "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=3&playlistId=PLAVz83Xtm7v2SeBdjrAFBNCwYIft8ZdVl&key=AIzaSyD_-SE7VcOCfum3vfbqGn3iypOtmnaJJj0";
+          "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=5&playlistId=PLAVz83Xtm7v2SeBdjrAFBNCwYIft8ZdVl&key=AIzaSyD_-SE7VcOCfum3vfbqGn3iypOtmnaJJj0";
         const response = await fetch(url);
         const data = await response.json();
 
