@@ -1,6 +1,6 @@
 :root {
   --color-fg: hsla(40, 26%, 85%, 1);
-  --color-fg-secondary: hsla(40, 26%, 72%, 1);
+  --color-fg-secondary: hsla(40, 20%, 72%, 1);
   --color-bg: hsla(0, 0%, 9%, 1);
   --color-bg-secondary: hsla(0, 0%, 19%, 1);
 
@@ -286,7 +286,7 @@ ol#songs > li .thumb-container > img {
 }
 
 img.bg {
-  object-position: 50% 85%;
+  object-position: 50% 50%;
   object-fit: cover;
   height: 22rem;
   width: 100vw;
@@ -387,6 +387,7 @@ section#contact > div {
   img.bg {
     object-position: 50% 100%;
     height: 12rem;
+    transform: scale(1.5);
   }
 
   ol#songs > li .song-info {

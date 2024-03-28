@@ -5,13 +5,7 @@
     <link rel="icon" type="image/jpeg" href="/logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boidushya</title>
-    <script>
-      if ("paintWorklet" in CSS) {
-        CSS.paintWorklet.addModule(
-          "https://www.unpkg.com/css-houdini-squircle/squircle.min.js"
-        );
-      }
-    </script>
+    <link rel="preload" href="/bg3.jpg" as="image" type="image/jpg" />
     <link
       href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap"
       rel="stylesheet"
@@ -24,7 +18,7 @@
   </head>
   <body>
     <section class="bg-container">
-      <img class="bg" src="/bg.jpg" alt="Breaking Bad Background" />
+      <img class="bg" src="/bg3.jpg" alt="Breaking Bad Background" />
     </section>
     <section class="hero-wrapper">
       <div class="hero-container">
